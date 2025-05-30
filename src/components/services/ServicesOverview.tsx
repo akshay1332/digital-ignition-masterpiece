@@ -1,6 +1,6 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, RefreshCw, Palette, Code, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -200,12 +200,14 @@ const ServicesOverview = () => {
                     </div>
                   </div>
 
-                  <Button 
-                    className={`w-full bg-gradient-to-r from-${service.color} to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-${service.color}/25 transition-all duration-300 group-hover:scale-105`}
-                  >
-                    {service.cta}
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Button>
+                  <Link to={service.link}>
+                    <Button 
+                      className={`w-full bg-gradient-to-r from-${service.color} to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-${service.color}/25 transition-all duration-300 group-hover:scale-105`}
+                    >
+                      {service.cta}
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             );
