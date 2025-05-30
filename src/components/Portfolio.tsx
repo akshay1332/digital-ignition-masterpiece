@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const [activeProject, setActiveProject] = useState(0);
@@ -140,10 +141,12 @@ const Portfolio = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-neon-cyan/25 transition-all duration-300 group">
-                View Case Study
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
+              <Link to="/case-studies">
+                <Button className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-neon-cyan/25 transition-all duration-300 group">
+                  View Case Study
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+              </Link>
               <Button 
                 variant="outline" 
                 className="border-neon-magenta text-neon-magenta hover:bg-neon-magenta hover:text-dark transition-all duration-300 group"
@@ -157,12 +160,14 @@ const Portfolio = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-purple/30 transition-all duration-300 transform hover:scale-105"
-          >
-            View Full Portfolio
-          </Button>
+          <Link to="/portfolio">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-purple/30 transition-all duration-300 transform hover:scale-105"
+            >
+              View Full Portfolio
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

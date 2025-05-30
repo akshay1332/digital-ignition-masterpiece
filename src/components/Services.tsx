@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Monitor, Palette, Code, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -11,25 +12,29 @@ const Services = () => {
       icon: Monitor,
       title: "Website Redesign",
       description: "Revitalize your online presence with modern, high-performing designs that convert visitors into customers.",
-      features: ["UX Audit", "Modern Design", "Performance Optimization", "Mobile-First Approach"]
+      features: ["UX Audit", "Modern Design", "Performance Optimization", "Mobile-First Approach"],
+      link: "/services/redesign"
     },
     {
       icon: Palette,
       title: "Web Design",
       description: "Crafting stunning, responsive websites tailored to your brand identity and business objectives.",
-      features: ["Custom Design", "Brand Integration", "Responsive Layout", "Visual Storytelling"]
+      features: ["Custom Design", "Brand Integration", "Responsive Layout", "Visual Storytelling"],
+      link: "/services/design"
     },
     {
       icon: Code,
       title: "Web Development",
       description: "Building fast, secure, and scalable web solutions using cutting-edge technologies and best practices.",
-      features: ["Custom Development", "Performance Optimization", "Security Focus", "Scalable Architecture"]
+      features: ["Custom Development", "Performance Optimization", "Security Focus", "Scalable Architecture"],
+      link: "/services/development"
     },
     {
       icon: Smartphone,
       title: "UI/UX Design",
       description: "Designing intuitive interfaces that delight users and drive engagement through thoughtful user experience.",
-      features: ["User Research", "Wireframing", "Prototyping", "Usability Testing"]
+      features: ["User Research", "Wireframing", "Prototyping", "Usability Testing"],
+      link: "/services/ux-design"
     }
   ];
 
@@ -92,12 +97,14 @@ const Services = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
-                    >
-                      Learn More
-                    </Button>
+                    <Link to={service.link}>
+                      <Button 
+                        variant="outline" 
+                        className="w-full border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+                      >
+                        Learn More
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -107,12 +114,14 @@ const Services = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-neon-magenta to-neon-purple text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-magenta/30 transition-all duration-300 transform hover:scale-105"
-          >
-            View All Services
-          </Button>
+          <Link to="/services">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-neon-magenta to-neon-purple text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-magenta/30 transition-all duration-300 transform hover:scale-105"
+            >
+              View All Services
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

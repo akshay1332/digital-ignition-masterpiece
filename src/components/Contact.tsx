@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -208,9 +209,11 @@ const Contact = () => {
               <p className="text-gray-300 font-roboto mb-4">
                 Schedule a 30-minute discovery call to discuss your project goals and how we can help.
               </p>
-              <Button className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold">
-                Schedule Call
-              </Button>
+              <Link to="/contact">
+                <Button className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold">
+                  Schedule Call
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

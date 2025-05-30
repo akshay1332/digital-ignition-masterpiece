@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -55,21 +56,25 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up" style={{animationDelay: '4s', animationFillMode: 'forwards'}}>
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-cyan/30 transition-all duration-300 transform hover:scale-105 group"
-          >
-            Discover Our Work
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
+          <Link to="/portfolio">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-cyan/30 transition-all duration-300 transform hover:scale-105 group"
+            >
+              Discover Our Work
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          </Link>
           
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Get In Touch
-          </Button>
+          <Link to="/contact">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Get In Touch
+            </Button>
+          </Link>
         </div>
 
         {/* Scroll Indicator */}
