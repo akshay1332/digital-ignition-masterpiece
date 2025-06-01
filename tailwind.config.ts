@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,11 +62,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom devXplosion colors
+				// Custom devXplosion colors - Updated with new green palette
 				dark: '#121212',
-				'neon-cyan': '#00FFFF',
-				'neon-magenta': '#FF00FF',
-				'neon-purple': '#8B5CF6',
+				'eco-light': '#ECFAE5',
+				'eco-medium': '#DDF6D2',
+				'eco-green': '#CAE8BD',
+				'eco-dark': '#B0DB9C',
+				// Legacy colors for compatibility
+				'neon-cyan': '#CAE8BD',
+				'neon-magenta': '#B0DB9C',
+				'neon-purple': '#DDF6D2',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

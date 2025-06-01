@@ -44,7 +44,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-montserrat font-bold text-white mb-6">
-            Our <span className="text-neon-cyan">Services</span>
+            Our <span className="text-eco-green">Services</span>
           </h2>
           <p className="text-xl font-roboto text-gray-300 max-w-3xl mx-auto">
             We offer comprehensive digital solutions to transform your business and create exceptional online experiences.
@@ -65,20 +65,20 @@ const Services = () => {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card Background */}
-                <div className="h-full bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 overflow-hidden">
+                <div className="h-full bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 hover:border-eco-green/50 transition-all duration-300 overflow-hidden">
                   {/* Glowing Border Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/20 to-neon-magenta/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-eco-green/20 to-eco-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
                   
                   <div className="relative p-8 h-full flex flex-col">
                     {/* Icon */}
                     <div className="mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-neon-cyan to-neon-magenta rounded-xl flex items-center justify-center group-hover:animate-glow-pulse">
+                      <div className="w-16 h-16 bg-gradient-to-br from-eco-green to-eco-dark rounded-xl flex items-center justify-center group-hover:animate-glow-pulse">
                         <IconComponent className="w-8 h-8 text-dark" />
                       </div>
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-montserrat font-bold text-white mb-4 group-hover:text-neon-cyan transition-colors duration-300">
+                    <h3 className="text-xl font-montserrat font-bold text-white mb-4 group-hover:text-eco-green transition-colors duration-300">
                       {service.title}
                     </h3>
                     
@@ -90,7 +90,7 @@ const Services = () => {
                     <div className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center text-sm text-gray-400">
-                          <div className="w-1.5 h-1.5 bg-neon-cyan rounded-full mr-3"></div>
+                          <div className="w-1.5 h-1.5 bg-eco-green rounded-full mr-3"></div>
                           {feature}
                         </div>
                       ))}
@@ -100,7 +100,7 @@ const Services = () => {
                     <Link to={service.link}>
                       <Button 
                         variant="outline" 
-                        className="w-full border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+                        className="w-full border-eco-green/50 text-eco-green hover:bg-eco-green hover:text-dark transition-all duration-300"
                       >
                         Learn More
                       </Button>
@@ -117,7 +117,7 @@ const Services = () => {
           <Link to="/services">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-neon-magenta to-neon-purple text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-magenta/30 transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-eco-medium to-eco-dark text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-eco-green/30 transition-all duration-300 transform hover:scale-105"
             >
               View All Services
             </Button>

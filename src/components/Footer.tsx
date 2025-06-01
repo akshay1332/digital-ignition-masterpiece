@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-montserrat font-bold text-white mb-4">
-              dev<span className="text-neon-cyan">X</span>plosion
+              dev<span className="text-eco-green">X</span>plosion
             </h3>
             <p className="text-gray-300 font-roboto mb-6">
               Transforming ideas into digital masterpieces. Your partner in web design, 
@@ -48,7 +48,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-300 group"
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-eco-green hover:bg-eco-green/10 transition-all duration-300 group"
                   >
                     <IconComponent className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   </a>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-neon-cyan font-roboto transition-colors duration-300"
+                    className="text-gray-300 hover:text-eco-green font-roboto transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -86,7 +86,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={service.href}
-                    className="text-gray-300 hover:text-neon-cyan font-roboto transition-colors duration-300"
+                    className="text-gray-300 hover:text-eco-green font-roboto transition-colors duration-300"
                   >
                     {service.name}
                   </a>
@@ -102,15 +102,15 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
-                <Mail className="w-5 h-5 mr-3 text-neon-cyan" />
+                <Mail className="w-5 h-5 mr-3 text-eco-green" />
                 <span className="font-roboto">hello@devxplosion.com</span>
               </div>
               <div className="flex items-center text-gray-300">
-                <Phone className="w-5 h-5 mr-3 text-neon-cyan" />
+                <Phone className="w-5 h-5 mr-3 text-eco-green" />
                 <span className="font-roboto">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center text-gray-300">
-                <MapPin className="w-5 h-5 mr-3 text-neon-cyan" />
+                <MapPin className="w-5 h-5 mr-3 text-eco-green" />
                 <span className="font-roboto">San Francisco, CA</span>
               </div>
             </div>
@@ -124,10 +124,10 @@ const Footer = () => {
               © {currentYear} devXplosion. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-neon-cyan font-roboto text-sm transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-eco-green font-roboto text-sm transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-neon-cyan font-roboto text-sm transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-eco-green font-roboto text-sm transition-colors duration-300">
                 Terms of Service
               </a>
             </div>

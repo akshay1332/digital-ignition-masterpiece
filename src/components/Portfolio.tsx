@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ExternalLink } from 'lucide-react';
@@ -56,7 +55,7 @@ const Portfolio = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-montserrat font-bold text-white mb-6">
-            Featured <span className="text-neon-magenta">Projects</span>
+            Featured <span className="text-eco-dark">Projects</span>
           </h2>
           <p className="text-xl font-roboto text-gray-300 max-w-3xl mx-auto">
             Discover how we've helped businesses transform their digital presence with innovative solutions.
@@ -67,7 +66,7 @@ const Portfolio = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Project Images Carousel */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl border-2 border-neon-cyan/30">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-eco-green/30">
               <img
                 src={projects[activeProject].image}
                 alt={projects[activeProject].title}
@@ -75,7 +74,7 @@ const Portfolio = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
               <div className="absolute top-4 left-4">
-                <span className="bg-neon-cyan text-dark px-3 py-1 rounded-full text-sm font-roboto font-medium">
+                <span className="bg-eco-green text-dark px-3 py-1 rounded-full text-sm font-roboto font-medium">
                   {projects[activeProject].category}
                 </span>
               </div>
@@ -89,7 +88,7 @@ const Portfolio = () => {
                   onClick={() => setActiveProject(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === activeProject
-                      ? 'bg-neon-cyan shadow-lg shadow-neon-cyan/50'
+                      ? 'bg-eco-green shadow-lg shadow-eco-green/50'
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />
@@ -109,7 +108,7 @@ const Portfolio = () => {
 
             {/* Technologies */}
             <div className="mb-6">
-              <h4 className="text-sm font-roboto font-medium text-neon-cyan mb-3 uppercase tracking-wider">
+              <h4 className="text-sm font-roboto font-medium text-eco-green mb-3 uppercase tracking-wider">
                 Technologies Used
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -126,13 +125,13 @@ const Portfolio = () => {
 
             {/* Results */}
             <div className="mb-8">
-              <h4 className="text-sm font-roboto font-medium text-neon-magenta mb-3 uppercase tracking-wider">
+              <h4 className="text-sm font-roboto font-medium text-eco-dark mb-3 uppercase tracking-wider">
                 Key Results
               </h4>
               <div className="space-y-2">
                 {projects[activeProject].results.map((result, index) => (
                   <div key={index} className="flex items-center text-gray-300">
-                    <div className="w-2 h-2 bg-neon-magenta rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-eco-dark rounded-full mr-3"></div>
                     <span className="font-roboto">{result}</span>
                   </div>
                 ))}
@@ -142,14 +141,14 @@ const Portfolio = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/case-studies">
-                <Button className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-neon-cyan/25 transition-all duration-300 group">
+                <Button className="bg-gradient-to-r from-eco-green to-eco-dark text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-eco-green/25 transition-all duration-300 group">
                   View Case Study
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Button 
                 variant="outline" 
-                className="border-neon-magenta text-neon-magenta hover:bg-neon-magenta hover:text-dark transition-all duration-300 group"
+                className="border-eco-dark text-eco-dark hover:bg-eco-dark hover:text-dark transition-all duration-300 group"
               >
                 Live Demo
                 <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
@@ -163,7 +162,7 @@ const Portfolio = () => {
           <Link to="/portfolio">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-purple/30 transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-eco-medium to-eco-dark text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-eco-green/30 transition-all duration-300 transform hover:scale-105"
             >
               View Full Portfolio
             </Button>
