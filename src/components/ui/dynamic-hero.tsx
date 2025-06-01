@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     const [showVideo, setShowVideo] = useState(false);
 
     const resolvedCanvasColorsRef = useRef({
-        strokeStyle: { r: 128, g: 128, b: 128 }, // Default mid-gray
+        strokeStyle: { r: 202, g: 232, b: 189 }, // Default to eco-green
     });
 
     useEffect(() => {
@@ -71,15 +71,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         document.body.appendChild(tempElement);
 
         const updateResolvedColors = () => {
-            tempElement.style.color = 'var(--foreground)';
+            tempElement.style.color = 'rgb(202, 232, 189)'; // eco-green color
             const computedFgColor = getComputedStyle(tempElement).color;
             const parsedFgColor = parseRgbColor(computedFgColor);
             if (parsedFgColor) {
                 resolvedCanvasColorsRef.current.strokeStyle = parsedFgColor;
             } else {
-                console.warn("HeroSection: Could not parse --foreground for canvas arrow. Using fallback.");
-                const isDarkMode = document.documentElement.classList.contains('dark');
-                resolvedCanvasColorsRef.current.strokeStyle = isDarkMode ? { r: 250, g: 250, b: 250 } : { r: 10, g: 10, b: 10 }; // Brighter fallback
+                resolvedCanvasColorsRef.current.strokeStyle = { r: 202, g: 232, b: 189 }; // eco-green fallback
             }
         };
         updateResolvedColors();
@@ -128,27 +126,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         const controlY = midY + offset * t;
         
         const r = Math.sqrt((x1 - x0)**2 + (y1 - y0)**2);
-        // Increase max opacity to 1 (fully opaque) and adjust divisor for quicker ramp-up
         const opacity = Math.min(1.0, (r - Math.max(rect.width, rect.height) / 2) / 500); 
 
         const arrowColor = resolvedCanvasColorsRef.current.strokeStyle;
         ctx.strokeStyle = `rgba(${arrowColor.r}, ${arrowColor.g}, ${arrowColor.b}, ${opacity})`;
-        // Increase line width for more visibility
-        ctx.lineWidth = 2; // Changed from 1.5 to 2
+        ctx.lineWidth = 2;
 
         // Draw curve
         ctx.save();
         ctx.beginPath();
         ctx.moveTo(x0, y0);
         ctx.quadraticCurveTo(controlX, controlY, x1, y1);
-        // Adjust dash pattern for thicker line: longer dashes, similar gap
-        ctx.setLineDash([10, 5]); // e.g., 10px dash, 5px gap
+        ctx.setLineDash([10, 5]);
         ctx.stroke();
         ctx.restore();
 
         // Draw arrowhead
         const angle = Math.atan2(y1 - controlY, x1 - controlX);
-        // Scale arrowhead with line width, base size 10 for lineWidth 1.5
         const headLength = 10 * (ctx.lineWidth / 1.5); 
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -241,7 +235,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 {navItems.map((item) => {
                     const commonProps = {
                         key: item.id,
-                        className: "py-2 px-3 sm:px-4 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/10 dark:hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-ring transition-colors duration-150 ease-in-out whitespace-nowrap",
+                        className: "py-2 px-3 sm:px-4 rounded-md text-muted-foreground hover:text-eco-green hover:bg-eco-green/10 focus:outline-none focus:ring-2 focus:ring-eco-green transition-colors duration-150 ease-in-out whitespace-nowrap",
                         onClick: item.onClick,
                     };
                     if (item.href) {
@@ -261,10 +255,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
             <main className="flex-grow flex flex-col items-center justify-center">
                 <div className="mt-12 sm:mt-16 lg:mt-24 flex flex-col items-center">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-center px-4">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-center px-4 text-white">
                         {heading}
                     </h1>
-                    <p className="mt-3 block text-muted-foreground text-center text-base sm:text-lg px-4 max-w-xl">
+                    <p className="mt-3 block text-gray-300 text-center text-base sm:text-lg px-4 max-w-xl">
                         {tagline}
                     </p>
                 </div>
@@ -272,15 +266,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="mt-8 flex justify-center">
                     <button
                         ref={targetRef}
-                        className="py-2 px-4 rounded-xl border border-foreground/50 hover:border-foreground/80 text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+                        className="py-3 px-6 rounded-xl bg-gradient-to-r from-eco-medium to-eco-green text-dark font-semibold hover:from-eco-green hover:to-eco-dark transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-eco-green/30 focus:outline-none focus:ring-2 focus:ring-eco-green"
                     >
                         {buttonText}
                     </button>
                 </div>
 
                 <div className="mt-12 lg:mt-16 w-full max-w-screen-sm mx-auto overflow-hidden px-4 sm:px-2">
-                    <div className="bg-border rounded-[2rem] p-[0.25rem]">
-                        <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 rounded-[1.75rem] bg-card flex items-center justify-center overflow-hidden">
+                    <div className="bg-gradient-to-r from-eco-green/20 to-eco-dark/20 rounded-[2rem] p-[0.25rem]">
+                        <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 rounded-[1.75rem] bg-gray-900 flex items-center justify-center overflow-hidden border border-eco-green/30">
                             {imageUrl && (
                                 <img
                                     src={imageUrl}
@@ -304,14 +298,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                             {!showVideo && videoUrl && imageUrl && (
                                 <button
                                     onClick={handlePlayButtonClick}
-                                    className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 p-2 sm:p-3 bg-accent/30 hover:bg-accent/50 text-accent-foreground backdrop-blur-sm rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+                                    className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 p-2 sm:p-3 bg-eco-green/30 hover:bg-eco-green/50 text-dark backdrop-blur-sm rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-eco-green"
                                     aria-label="Play video"
                                 >
                                     <PlayIcon className="w-4 h-4 sm:w-5 sm:h-6" />
                                 </button>
                             )}
                             {!imageUrl && !videoUrl && (
-                                <div className="text-muted-foreground italic">Card Content Area</div>
+                                <div className="text-eco-green italic">Card Content Area</div>
                             )}
                         </div>
                     </div>
