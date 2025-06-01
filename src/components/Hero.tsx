@@ -16,7 +16,7 @@ const Hero = () => {
       tagline="Your Partner in Web Design, Development, and UI/UX Excellence"
       buttonText="Discover Our Work"
       imageUrl="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-      videoUrl="https://www.w3schools.com/html/mov_bbb.mp4"
+      videoUrl="https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4"
       navItems={navItems}
     />
   );

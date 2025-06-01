@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 
 // Helper to parse 'rgb(r, g, b)' or 'rgba(r, g, b, a)' string to {r, g, b}
@@ -237,7 +236,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     };
 
     return (
-        <div className="bg-background text-foreground min-h-screen flex flex-col">
+        <div className="bg-dark text-foreground min-h-screen flex flex-col">
             <nav className="w-full max-w-screen-md mx-auto flex flex-wrap justify-center sm:justify-between items-center px-4 sm:px-8 py-4 text-sm">
                 {navItems.map((item) => {
                     const commonProps = {
