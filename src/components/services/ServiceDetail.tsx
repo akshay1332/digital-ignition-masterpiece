@@ -83,6 +83,51 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Updated pricing data with Indian rupees
+  const updatedPricing = [
+    {
+      name: 'Basic Package',
+      price: '₹9,999',
+      description: 'Perfect for small businesses and startups',
+      features: [
+        'Professional design',
+        'Responsive layout',
+        'Basic functionality',
+        'Mobile optimization',
+        '30 days support'
+      ],
+      popular: false
+    },
+    {
+      name: 'Standard Package',
+      price: '₹9,999',
+      description: 'Comprehensive solution for growing businesses',
+      features: [
+        'Advanced design',
+        'Custom functionality',
+        'Performance optimization',
+        'SEO optimization',
+        '60 days support',
+        'Analytics integration'
+      ],
+      popular: true
+    },
+    {
+      name: 'Premium Package',
+      price: '₹9,999',
+      description: 'Full-featured solution with premium support',
+      features: [
+        'Premium design',
+        'Advanced integrations',
+        'Priority support',
+        'Custom features',
+        '90 days support',
+        'Ongoing maintenance'
+      ],
+      popular: false
+    }
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -211,7 +256,7 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {data.pricing.map((plan, index) => (
+            {updatedPricing.map((plan, index) => (
               <Card 
                 key={index}
                 className={`relative bg-dark/80 backdrop-blur-md border-2 transition-all duration-300 hover:scale-105 ${

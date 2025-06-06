@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Calendar } from 'lucide-react';
 import Navigation from '@/components/Navigation';
@@ -119,16 +120,16 @@ const Contact = () => {
           <section className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <Tabs defaultValue="booking" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8 bg-dark/60 border border-eco-green/20">
+                <TabsList className="grid w-full grid-cols-2 mb-8 bg-dark/80 backdrop-blur-md border border-eco-green/30">
                   <TabsTrigger 
                     value="booking" 
-                    className="text-white data-[state=active]:bg-eco-green data-[state=active]:text-dark font-roboto"
+                    className="text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-eco-green data-[state=active]:to-eco-medium data-[state=active]:text-dark font-roboto font-semibold transition-all duration-300"
                   >
                     Schedule Free Consultation
                   </TabsTrigger>
                   <TabsTrigger 
                     value="contact" 
-                    className="text-white data-[state=active]:bg-eco-green data-[state=active]:text-dark font-roboto"
+                    className="text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-eco-green data-[state=active]:to-eco-medium data-[state=active]:text-dark font-roboto font-semibold transition-all duration-300"
                   >
                     General Inquiry
                   </TabsTrigger>
@@ -156,27 +157,27 @@ const Contact = () => {
                         General <span className="text-eco-green">Inquiry</span>
                       </h2>
                       
-                      <Card className="bg-dark/80 backdrop-blur-md border-eco-green/20">
+                      <Card className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl shadow-eco-green/10">
                         <CardContent className="p-8">
                           <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-white font-roboto mb-2">Name *</label>
+                                <label className="block text-white font-roboto font-semibold mb-3">Name *</label>
                                 <Input
                                   value={formData.name}
                                   onChange={(e) => handleInputChange('name', e.target.value)}
-                                  className="bg-dark/60 border-eco-green/20 text-white placeholder-gray-400 focus:border-eco-green"
+                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
                                   placeholder="Your full name"
                                   required
                                 />
                               </div>
                               <div>
-                                <label className="block text-white font-roboto mb-2">Email *</label>
+                                <label className="block text-white font-roboto font-semibold mb-3">Email *</label>
                                 <Input
                                   type="email"
                                   value={formData.email}
                                   onChange={(e) => handleInputChange('email', e.target.value)}
-                                  className="bg-dark/60 border-eco-green/20 text-white placeholder-gray-400 focus:border-eco-green"
+                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
                                   placeholder="your@email.com"
                                   required
                                 />
@@ -185,53 +186,53 @@ const Contact = () => {
 
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-white font-roboto mb-2">Phone</label>
+                                <label className="block text-white font-roboto font-semibold mb-3">Phone</label>
                                 <Input
                                   value={formData.phone}
                                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                                  className="bg-dark/60 border-eco-green/20 text-white placeholder-gray-400 focus:border-eco-green"
-                                  placeholder="+1 (555) 123-4567"
+                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
+                                  placeholder="+91 98765 43210"
                                 />
                               </div>
                               <div>
-                                <label className="block text-white font-roboto mb-2">Service Needed *</label>
+                                <label className="block text-white font-roboto font-semibold mb-3">Service Needed *</label>
                                 <Select onValueChange={(value) => handleInputChange('service', value)} required>
-                                  <SelectTrigger className="bg-dark/60 border-eco-green/20 text-white focus:border-eco-green">
-                                    <SelectValue placeholder="Select a service" />
+                                  <SelectTrigger className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12">
+                                    <SelectValue placeholder="Select a service" className="text-gray-400" />
                                   </SelectTrigger>
-                                  <SelectContent className="bg-dark border-eco-green/20">
-                                    <SelectItem value="redesign">Website Redesign</SelectItem>
-                                    <SelectItem value="design">Web Design</SelectItem>
-                                    <SelectItem value="development">Web Development</SelectItem>
-                                    <SelectItem value="ux">UI/UX Design</SelectItem>
-                                    <SelectItem value="consultation">Consultation</SelectItem>
+                                  <SelectContent className="bg-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
+                                    <SelectItem value="redesign" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Website Redesign</SelectItem>
+                                    <SelectItem value="design" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Design</SelectItem>
+                                    <SelectItem value="development" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Development</SelectItem>
+                                    <SelectItem value="ux" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">UI/UX Design</SelectItem>
+                                    <SelectItem value="consultation" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Consultation</SelectItem>
                                   </SelectContent>
                                 </Select>
                               </div>
                             </div>
 
                             <div>
-                              <label className="block text-white font-roboto mb-2">Budget Range</label>
+                              <label className="block text-white font-roboto font-semibold mb-3">Budget Range</label>
                               <Select onValueChange={(value) => handleInputChange('budget', value)}>
-                                <SelectTrigger className="bg-dark/60 border-eco-green/20 text-white focus:border-eco-green">
-                                  <SelectValue placeholder="Select budget range" />
+                                <SelectTrigger className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12">
+                                  <SelectValue placeholder="Select budget range" className="text-gray-400" />
                                 </SelectTrigger>
-                                <SelectContent className="bg-dark border-eco-green/20">
-                                  <SelectItem value="free">Free Consultation</SelectItem>
-                                  <SelectItem value="under-10k">Under ₹10,000</SelectItem>
-                                  <SelectItem value="10k-25k">₹10,000 - ₹25,000</SelectItem>
-                                  <SelectItem value="25k-50k">₹25,000 - ₹50,000</SelectItem>
-                                  <SelectItem value="50k-plus">₹50,000+</SelectItem>
+                                <SelectContent className="bg-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
+                                  <SelectItem value="free" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Free Consultation</SelectItem>
+                                  <SelectItem value="under-10k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Under ₹10,000</SelectItem>
+                                  <SelectItem value="10k-25k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹10,000 - ₹25,000</SelectItem>
+                                  <SelectItem value="25k-50k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹25,000 - ₹50,000</SelectItem>
+                                  <SelectItem value="50k-plus" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹50,000+</SelectItem>
                                 </SelectContent>
                               </Select>
                             </div>
 
                             <div>
-                              <label className="block text-white font-roboto mb-2">Project Description *</label>
+                              <label className="block text-white font-roboto font-semibold mb-3">Project Description *</label>
                               <Textarea
                                 value={formData.message}
                                 onChange={(e) => handleInputChange('message', e.target.value)}
-                                className="bg-dark/60 border-eco-green/20 text-white placeholder-gray-400 focus:border-eco-green min-h-[120px]"
+                                className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 min-h-[120px] transition-all duration-300 resize-none"
                                 placeholder="Tell us about your project, goals, and timeline..."
                                 required
                               />
@@ -239,7 +240,7 @@ const Contact = () => {
 
                             <Button 
                               type="submit"
-                              className="w-full bg-gradient-to-r from-eco-green to-eco-magenta text-dark font-roboto font-semibold py-3 text-lg hover:shadow-xl hover:shadow-eco-green/30 transition-all duration-300 transform hover:scale-105"
+                              className="w-full bg-gradient-to-r from-eco-green to-eco-medium text-dark font-roboto font-semibold py-4 text-lg hover:shadow-xl hover:shadow-eco-green/30 transition-all duration-300 transform hover:scale-105"
                             >
                               Send Message
                               <Send className="ml-2 h-5 w-5" />
