@@ -2,7 +2,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
+import StickyPortfolio from '@/components/StickyPortfolio';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -13,7 +13,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Services />
-      <Portfolio />
+      <StickyPortfolio />
       <Testimonials />
       <Contact />
       <Footer />

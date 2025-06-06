@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -122,10 +121,10 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 p-8 md:p-12 relative overflow-hidden"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 hover:border-eco-green/50 transition-all duration-300 p-8 md:p-12 relative overflow-hidden"
             >
               {/* Glowing Border Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-neon-magenta/10 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-magenta rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-sm"></div>
               
               <div className="relative z-10">
                 {/* Quote Icon */}
@@ -188,7 +187,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+              className="bg-white border-gray-300 text-black hover:bg-gray-100 transition-all duration-300"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -204,7 +203,7 @@ const Testimonials = () => {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-neon-cyan shadow-lg shadow-neon-cyan/50' 
+                      ? 'bg-eco-green shadow-lg shadow-eco-green/50' 
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />
@@ -215,7 +214,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+              className="bg-white border-gray-300 text-black hover:bg-gray-100 transition-all duration-300"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
