@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, RefreshCw, Palette, Code, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -29,7 +30,7 @@ const ServicesOverview = () => {
         { step: 'Develop', description: 'Build with latest technologies' },
         { step: 'Launch', description: 'Deploy and optimize' }
       ],
-      cta: 'Request Redesign Quote',
+      cta: 'Get Redesign Quote - ₹9,999',
       color: 'neon-cyan',
       link: '/services/redesign'
     },
@@ -52,7 +53,7 @@ const ServicesOverview = () => {
         { step: 'Prototype', description: 'Interactive demonstrations' },
         { step: 'Refine', description: 'Perfect every detail' }
       ],
-      cta: 'Start Design Project',
+      cta: 'Start Design Project - ₹9,999',
       color: 'neon-magenta',
       link: '/services/design'
     },
@@ -75,7 +76,7 @@ const ServicesOverview = () => {
         { step: 'Integration', description: 'System connections' },
         { step: 'Deployment', description: 'Launch and maintenance' }
       ],
-      cta: 'Get Development Quote',
+      cta: 'Get Development Quote - ₹9,999',
       color: 'neon-purple',
       link: '/services/development'
     },
@@ -98,7 +99,7 @@ const ServicesOverview = () => {
         { step: 'Prototype', description: 'Interactive testing' },
         { step: 'Iterate', description: 'Continuous improvement' }
       ],
-      cta: 'Enhance Your UX',
+      cta: 'Enhance Your UX - ₹9,999',
       color: 'neon-cyan',
       link: '/services/ux-design'
     }
@@ -223,19 +224,23 @@ const ServicesOverview = () => {
             Let's discuss your project and create something extraordinary together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-cyan/30 transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Project
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Schedule Consultation
-            </Button>
+            <Link to="/contact">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-neon-cyan/30 transition-all duration-300 transform hover:scale-105"
+              >
+                Start Your Project
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Schedule Free Consultation
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

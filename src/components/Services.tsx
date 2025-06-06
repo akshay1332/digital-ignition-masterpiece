@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Monitor, Smartphone, Search, Palette, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,8 @@ const Services = () => {
       description: 'Transform your existing website with modern design principles and enhanced user experience.',
       features: ['Modern UI/UX', 'Mobile Responsive', 'Performance Optimization', 'SEO Enhancement'],
       price: '₹9,999',
-      popular: false
+      popular: false,
+      link: '/services/redesign'
     },
     {
       icon: Palette,
@@ -19,7 +21,8 @@ const Services = () => {
       description: 'Create stunning, user-friendly websites that captivate your audience and drive conversions.',
       features: ['Custom Design', 'Brand Integration', 'User Research', 'Wireframing'],
       price: '₹9,999',
-      popular: true
+      popular: true,
+      link: '/services/design'
     },
     {
       icon: Code,
@@ -27,7 +30,8 @@ const Services = () => {
       description: 'Build robust, scalable web applications with cutting-edge technologies and best practices.',
       features: ['Full-Stack Development', 'API Integration', 'Database Design', 'Security Implementation'],
       price: '₹9,999',
-      popular: false
+      popular: false,
+      link: '/services/development'
     },
     {
       icon: Smartphone,
@@ -35,7 +39,8 @@ const Services = () => {
       description: 'Design intuitive interfaces that provide exceptional user experiences across all devices.',
       features: ['User Interface Design', 'User Experience Research', 'Prototyping', 'Usability Testing'],
       price: '₹9,999',
-      popular: false
+      popular: false,
+      link: '/services/ux-design'
     },
     {
       icon: Search,
@@ -43,7 +48,8 @@ const Services = () => {
       description: 'Get expert advice and project assessment to kickstart your digital transformation journey.',
       features: ['Project Assessment', 'Strategy Planning', 'Technology Recommendations', 'Timeline Planning'],
       price: 'FREE',
-      popular: true
+      popular: true,
+      link: '/contact'
     },
     {
       icon: Zap,
@@ -51,7 +57,8 @@ const Services = () => {
       description: 'Boost your website speed and performance for better user experience and SEO rankings.',
       features: ['Speed Optimization', 'SEO Improvement', 'Core Web Vitals', 'Analytics Setup'],
       price: '₹9,999',
-      popular: false
+      popular: false,
+      link: '/services'
     }
   ];
 
@@ -137,15 +144,15 @@ const Services = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <Link to={service.price === 'FREE' ? '/contact' : `/services/${service.title.toLowerCase().replace(/\s+/g, '-').replace('/', '-')}`}>
+                    <Link to={service.link}>
                       <Button 
-                        className={`w-full font-roboto font-semibold transition-all duration-300 ${
+                        className={`w-full text-dark font-roboto font-semibold transition-all duration-300 ${
                           service.popular
-                            ? 'bg-gradient-to-r from-eco-green to-eco-medium text-dark hover:shadow-xl hover:shadow-eco-green/30'
-                            : 'bg-gradient-to-r from-eco-medium to-eco-dark text-dark hover:shadow-lg hover:shadow-eco-medium/25'
+                            ? 'bg-gradient-to-r from-eco-green to-eco-medium hover:shadow-xl hover:shadow-eco-green/30'
+                            : 'bg-gradient-to-r from-eco-medium to-eco-dark hover:shadow-lg hover:shadow-eco-medium/25'
                         } transform group-hover:scale-105`}
                       >
-                        {service.price === 'FREE' ? 'Book Free Consultation' : 'Get Started'}
+                        {service.price === 'FREE' ? 'Book Free Consultation' : 'Learn More'}
                       </Button>
                     </Link>
                   </div>

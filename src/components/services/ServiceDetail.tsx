@@ -1,8 +1,8 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 interface ServiceDetailProps {
   data: {
@@ -37,6 +37,10 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
   const [activeStep, setActiveStep] = useState(0);
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const processRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -109,21 +113,25 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className={`bg-gradient-to-r from-${data.color} to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-${data.color}/30 transition-all duration-300 transform hover:scale-105`}
-            >
-              {data.cta.primary}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/contact" onClick={scrollToTop}>
+              <Button 
+                size="lg" 
+                className={`bg-gradient-to-r from-${data.color} to-neon-magenta text-dark font-roboto font-semibold px-8 py-4 text-lg hover:shadow-xl hover:shadow-${data.color}/30 transition-all duration-300 transform hover:scale-105`}
+              >
+                {data.cta.primary}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
             
-            <Button 
-              variant="outline" 
-              size="lg"
-              className={`border-2 border-${data.color} text-${data.color} hover:bg-${data.color} hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300`}
-            >
-              {data.cta.secondary}
-            </Button>
+            <Link to="/contact" onClick={scrollToTop}>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className={`border-2 border-${data.color} text-${data.color} hover:bg-${data.color} hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300`}
+              >
+                {data.cta.secondary}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -198,7 +206,7 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
               Pricing <span className={`text-${data.color}`}>Plans</span>
             </h2>
             <p className="text-xl text-gray-300 font-roboto max-w-3xl mx-auto">
-              Choose the perfect package for your project. All plans include our commitment to excellence.
+              Choose the perfect package for your project. All plans include our commitment to excellence and post-launch support.
             </p>
           </div>
 
@@ -240,19 +248,37 @@ const ServiceDetail = ({ data }: ServiceDetailProps) => {
                     ))}
                   </ul>
                   
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? `bg-gradient-to-r from-${data.color} to-neon-magenta text-dark` 
-                        : `border-2 border-${data.color} text-${data.color} hover:bg-${data.color} hover:text-dark`
-                    } font-roboto font-semibold transition-all duration-300`}
-                    variant={plan.popular ? "default" : "outline"}
-                  >
-                    Get Started
-                  </Button>
+                  <Link to="/contact" onClick={scrollToTop}>
+                    <Button 
+                      className={`w-full ${
+                        plan.popular 
+                          ? `bg-gradient-to-r from-${data.color} to-neon-magenta text-dark` 
+                          : `border-2 border-${data.color} text-${data.color} hover:bg-${data.color} hover:text-dark`
+                      } font-roboto font-semibold transition-all duration-300`}
+                      variant={plan.popular ? "default" : "outline"}
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Additional CTA */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-gray-300 font-roboto mb-6">
+              Need a custom solution? Let's discuss your specific requirements.
+            </p>
+            <Link to="/contact" onClick={scrollToTop}>
+              <Button 
+                size="lg"
+                variant="outline"
+                className={`border-2 border-eco-green text-eco-green hover:bg-eco-green hover:text-dark font-roboto font-semibold px-8 py-4 text-lg transition-all duration-300`}
+              >
+                Schedule Free Consultation
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
