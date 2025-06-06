@@ -43,19 +43,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@devxplosion.com",
-      link: "mailto:hello@devxplosion.com"
+      value: "akshayrajput2616@gmail.com",
+      link: "mailto:akshayrajput2616@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+91 96538 14628",
+      link: "tel:+919653814628"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "India",
       link: "#"
     }
   ];

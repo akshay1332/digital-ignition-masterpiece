@@ -103,15 +103,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3 text-eco-green" />
-                <span className="font-roboto">hello@devxplosion.com</span>
+                <span className="font-roboto">akshayrajput2616@gmail.com</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="w-5 h-5 mr-3 text-eco-green" />
-                <span className="font-roboto">+1 (555) 123-4567</span>
+                <span className="font-roboto">+91 96538 14628</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-3 text-eco-green" />
-                <span className="font-roboto">San Francisco, CA</span>
+                <span className="font-roboto">India</span>
               </div>
             </div>
           </div>

@@ -35,19 +35,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@devxplosion.com',
+      details: 'akshayrajput2616@gmail.com',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+91 98765 43210',
+      details: '+91 96538 14628',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Mumbai, India',
+      details: 'India',
       description: 'Schedule an appointment'
     }
   ];
@@ -91,10 +91,10 @@ const Contact = () => {
                   return (
                     <Card 
                       key={index}
-                      className="bg-dark/80 backdrop-blur-md border-eco-green/20 hover:border-eco-green/60 transition-all duration-300 text-center group"
+                      className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 hover:border-eco-green/60 transition-all duration-300 text-center group shadow-xl shadow-eco-green/10"
                     >
                       <CardHeader>
-                        <div className="w-16 h-16 bg-eco-green/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:animate-glow-pulse">
+                        <div className="w-16 h-16 bg-gradient-to-br from-eco-green/20 to-eco-green/10 border border-eco-green/30 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:animate-glow-pulse">
                           <Icon className="w-8 h-8 text-eco-green" />
                         </div>
                         <CardTitle className="text-xl font-montserrat font-bold text-white">
@@ -120,7 +120,7 @@ const Contact = () => {
           <section className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <Tabs defaultValue="booking" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8 bg-dark/80 backdrop-blur-md border border-eco-green/30">
+                <TabsList className="grid w-full grid-cols-2 mb-8 bg-gradient-to-r from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-xl shadow-eco-green/10">
                   <TabsTrigger 
                     value="booking" 
                     className="text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-eco-green data-[state=active]:to-eco-medium data-[state=active]:text-dark font-roboto font-semibold transition-all duration-300"
@@ -145,7 +145,9 @@ const Contact = () => {
                       Get expert advice, project assessment, and strategic recommendations - completely free!
                     </p>
                   </div>
-                  <BookingSystem />
+                  <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 rounded-2xl p-8 shadow-2xl shadow-eco-green/10">
+                    <BookingSystem />
+                  </div>
                 </TabsContent>
 
                 {/* Contact Form Tab */}
@@ -157,7 +159,7 @@ const Contact = () => {
                         General <span className="text-eco-green">Inquiry</span>
                       </h2>
                       
-                      <Card className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl shadow-eco-green/10">
+                      <Card className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl shadow-eco-green/10">
                         <CardContent className="p-8">
                           <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-4">
@@ -166,7 +168,7 @@ const Contact = () => {
                                 <Input
                                   value={formData.name}
                                   onChange={(e) => handleInputChange('name', e.target.value)}
-                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
+                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
                                   placeholder="Your full name"
                                   required
                                 />
@@ -177,7 +179,7 @@ const Contact = () => {
                                   type="email"
                                   value={formData.email}
                                   onChange={(e) => handleInputChange('email', e.target.value)}
-                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
+                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
                                   placeholder="your@email.com"
                                   required
                                 />
@@ -190,17 +192,17 @@ const Contact = () => {
                                 <Input
                                   value={formData.phone}
                                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                                  className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12"
-                                  placeholder="+91 98765 43210"
+                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
+                                  placeholder="+91 96538 14628"
                                 />
                               </div>
                               <div>
                                 <label className="block text-white font-roboto font-semibold mb-3">Service Needed *</label>
                                 <Select onValueChange={(value) => handleInputChange('service', value)} required>
-                                  <SelectTrigger className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12">
+                                  <SelectTrigger className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg">
                                     <SelectValue placeholder="Select a service" className="text-gray-400" />
                                   </SelectTrigger>
-                                  <SelectContent className="bg-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
+                                  <SelectContent className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
                                     <SelectItem value="redesign" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Website Redesign</SelectItem>
                                     <SelectItem value="design" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Design</SelectItem>
                                     <SelectItem value="development" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Development</SelectItem>
@@ -214,10 +216,10 @@ const Contact = () => {
                             <div>
                               <label className="block text-white font-roboto font-semibold mb-3">Budget Range</label>
                               <Select onValueChange={(value) => handleInputChange('budget', value)}>
-                                <SelectTrigger className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12">
+                                <SelectTrigger className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg">
                                   <SelectValue placeholder="Select budget range" className="text-gray-400" />
                                 </SelectTrigger>
-                                <SelectContent className="bg-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
+                                <SelectContent className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
                                   <SelectItem value="free" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Free Consultation</SelectItem>
                                   <SelectItem value="under-10k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Under ₹10,000</SelectItem>
                                   <SelectItem value="10k-25k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹10,000 - ₹25,000</SelectItem>
@@ -232,7 +234,7 @@ const Contact = () => {
                               <Textarea
                                 value={formData.message}
                                 onChange={(e) => handleInputChange('message', e.target.value)}
-                                className="bg-gray-800/80 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 min-h-[120px] transition-all duration-300 resize-none"
+                                className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 min-h-[120px] transition-all duration-300 resize-none shadow-lg"
                                 placeholder="Tell us about your project, goals, and timeline..."
                                 required
                               />
@@ -273,7 +275,7 @@ const Contact = () => {
                         </div>
                       </div>
 
-                      <Card className="bg-dark/60 backdrop-blur-md border-eco-magenta/20">
+                      <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-md border-2 border-eco-magenta/20 shadow-xl shadow-eco-magenta/10">
                         <CardHeader>
                           <CardTitle className="text-xl font-montserrat font-bold text-white flex items-center">
                             <Calendar className="w-5 h-5 mr-2 text-eco-magenta" />
@@ -293,7 +295,7 @@ const Contact = () => {
                         </CardContent>
                       </Card>
 
-                      <Card className="bg-dark/60 backdrop-blur-md border-eco-purple/20">
+                      <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-md border-2 border-eco-purple/20 shadow-xl shadow-eco-purple/10">
                         <CardHeader>
                           <CardTitle className="text-xl font-montserrat font-bold text-white">
                             Quick Response Time
