@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -85,12 +84,12 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-b from-gray-900 to-dark relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/5 via-transparent to-neon-cyan/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-light/5 via-transparent to-green-medium/5"></div>
       
       {/* Floating Particles */}
-      <div className="absolute top-20 left-20 w-12 h-12 bg-neon-cyan/10 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-20 right-20 w-20 h-20 bg-neon-magenta/10 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-neon-purple/10 rounded-full blur-xl animate-float" style={{animationDelay: '4s'}}></div>
+      <div className="absolute top-20 left-20 w-12 h-12 bg-green-medium/10 rounded-full blur-xl animate-float"></div>
+      <div className="absolute bottom-20 right-20 w-20 h-20 bg-green-dark/10 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-green-light/10 rounded-full blur-xl animate-float" style={{animationDelay: '4s'}}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -101,7 +100,7 @@ const Testimonials = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-5xl font-montserrat font-bold text-white mb-6"
           >
-            What Our <span className="text-neon-cyan">Clients Say</span>
+            What Our <span className="text-green-medium">Clients Say</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -122,14 +121,14 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 p-8 md:p-12 relative overflow-hidden"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-3xl border border-gray-700 hover:border-green-medium/50 transition-all duration-300 p-8 md:p-12 relative overflow-hidden"
             >
               {/* Glowing Border Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-neon-magenta/10 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-medium/10 to-green-dark/10 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-sm"></div>
               
               <div className="relative z-10">
                 {/* Quote Icon */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-neon-cyan to-neon-magenta rounded-full flex items-center justify-center opacity-20">
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-medium to-green-dark rounded-full flex items-center justify-center opacity-20">
                   <Quote className="w-8 h-8 text-white" />
                 </div>
 
@@ -137,14 +136,14 @@ const Testimonials = () => {
                   {/* Client Photo & Info */}
                   <div className="text-center md:text-left">
                     <div className="relative inline-block mb-4">
-                      <div className="w-32 h-32 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-neon-cyan/30 hover:border-neon-cyan transition-colors duration-300">
+                      <div className="w-32 h-32 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-green-medium/30 hover:border-green-medium transition-colors duration-300">
                         <img 
                           src={currentTestimonial.image} 
                           alt={currentTestimonial.name}
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-neon-cyan to-neon-magenta rounded-full flex items-center justify-center">
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-medium to-green-dark rounded-full flex items-center justify-center">
                         <div className="w-4 h-4 bg-white rounded-full"></div>
                       </div>
                     </div>
@@ -152,7 +151,7 @@ const Testimonials = () => {
                     <h4 className="text-xl font-montserrat font-bold text-white mb-1">
                       {currentTestimonial.name}
                     </h4>
-                    <p className="text-neon-cyan font-roboto mb-1">
+                    <p className="text-green-medium font-roboto mb-1">
                       {currentTestimonial.role}
                     </p>
                     <p className="text-gray-400 font-roboto text-sm mb-4">
@@ -166,7 +165,7 @@ const Testimonials = () => {
                       ))}
                     </div>
                     
-                    <div className="text-sm text-neon-magenta font-roboto font-medium">
+                    <div className="text-sm text-green-dark font-roboto font-medium">
                       Project: {currentTestimonial.project}
                     </div>
                   </div>
@@ -188,7 +187,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+              className="border-black bg-white text-black hover:bg-gray-100 transition-all duration-300"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -204,7 +203,7 @@ const Testimonials = () => {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-neon-cyan shadow-lg shadow-neon-cyan/50' 
+                      ? 'bg-green-medium shadow-lg shadow-green-medium/50' 
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />
@@ -215,7 +214,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan hover:text-dark transition-all duration-300"
+              className="border-black bg-white text-black hover:bg-gray-100 transition-all duration-300"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -235,7 +234,7 @@ const Testimonials = () => {
             { number: "300%", label: "Average ROI Increase" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl font-montserrat font-bold text-neon-cyan mb-2">
+              <div className="text-4xl font-montserrat font-bold text-green-medium mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-300 font-roboto">
