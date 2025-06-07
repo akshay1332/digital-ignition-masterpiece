@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -25,6 +24,10 @@ import Homepage from "./pages/admin/Homepage";
 import BlogAdmin from "./pages/admin/BlogAdmin";
 import CaseStudiesAdmin from "./pages/admin/CaseStudiesAdmin";
 import PortfolioAdmin from "./pages/admin/PortfolioAdmin";
+import ServicesAdmin from "./pages/admin/ServicesAdmin";
+import WebDesignAdmin from "./pages/admin/WebDesignAdmin";
+import AboutAdmin from "./pages/admin/AboutAdmin";
+import ContactAdmin from "./pages/admin/ContactAdmin";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +54,13 @@ const App = () => (
             {/* Admin Routes */}
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/homepage" element={<Homepage />} />
+            <Route path="/admin/about" element={<AboutAdmin />} />
+            <Route path="/admin/contact" element={<ContactAdmin />} />
+            <Route path="/admin/services" element={<ServicesAdmin />} />
+            <Route path="/admin/services/design" element={<WebDesignAdmin />} />
+            <Route path="/admin/services/ux-design" element={<WebDesignAdmin />} />
+            <Route path="/admin/services/development" element={<WebDesignAdmin />} />
+            <Route path="/admin/services/redesign" element={<WebDesignAdmin />} />
             <Route path="/admin/blog" element={<BlogAdmin />} />
             <Route path="/admin/case-studies" element={<CaseStudiesAdmin />} />
             <Route path="/admin/portfolio" element={<PortfolioAdmin />} />
