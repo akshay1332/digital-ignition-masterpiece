@@ -19,6 +19,13 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Admin Routes
+import Dashboard from "./pages/admin/Dashboard";
+import Homepage from "./pages/admin/Homepage";
+import BlogAdmin from "./pages/admin/BlogAdmin";
+import CaseStudiesAdmin from "./pages/admin/CaseStudiesAdmin";
+import PortfolioAdmin from "./pages/admin/PortfolioAdmin";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,6 +47,14 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin" element={<Dashboard />} />
+            <Route path="/admin/homepage" element={<Homepage />} />
+            <Route path="/admin/blog" element={<BlogAdmin />} />
+            <Route path="/admin/case-studies" element={<CaseStudiesAdmin />} />
+            <Route path="/admin/portfolio" element={<PortfolioAdmin />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
