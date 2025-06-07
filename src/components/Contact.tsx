@@ -61,22 +61,22 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-dark">
+    <section id="contact" className="py-12 md:py-20 bg-gradient-to-b from-gray-900 to-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-montserrat font-bold text-white mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-white mb-4 md:mb-6">
             Ready to Ignite Your <span className="text-neon-cyan">Digital Presence</span>?
           </h2>
-          <p className="text-xl font-roboto text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl font-roboto text-gray-300 max-w-3xl mx-auto">
             Let's discuss your project and create something extraordinary together. Get in touch today!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-8">
-            <h3 className="text-2xl font-montserrat font-bold text-white mb-6">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 p-6 md:p-8">
+            <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-6">
               Send us a Message
             </h3>
             
@@ -93,7 +93,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                    className="bg-gray-900/80 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20 h-12"
                     placeholder="Your full name"
                   />
                 </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                    className="bg-gray-900/80 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20 h-12"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -125,7 +125,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                  className="bg-gray-900/80 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20 h-12"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -141,7 +141,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20 resize-none"
+                  className="bg-gray-900/80 border-gray-600 text-white placeholder-gray-400 focus:border-neon-cyan focus:ring-neon-cyan/20 resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -149,7 +149,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold py-3 hover:shadow-lg hover:shadow-neon-cyan/25 transition-all duration-300 transform hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-neon-cyan to-neon-magenta text-dark font-roboto font-semibold py-4 hover:shadow-lg hover:shadow-neon-cyan/25 transition-all duration-300 transform hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   'Sending...'
@@ -164,12 +164,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="text-2xl font-montserrat font-bold text-white mb-6">
+              <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-6">
                 Get in Touch
               </h3>
-              <p className="text-lg font-roboto text-gray-300 mb-8">
+              <p className="text-base md:text-lg font-roboto text-gray-300 mb-8">
                 Have a question or want to work together? We'd love to hear from you. 
                 Reach out and let's start building something amazing.
               </p>
@@ -183,16 +183,16 @@ const Contact = () => {
                   <a
                     key={index}
                     href={info.link}
-                    className="flex items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 group"
+                    className="flex items-center p-4 md:p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-neon-cyan/50 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-neon-cyan to-neon-magenta rounded-lg flex items-center justify-center mr-4 group-hover:animate-glow-pulse">
-                      <IconComponent className="w-6 h-6 text-dark" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-neon-cyan to-neon-magenta rounded-lg flex items-center justify-center mr-4 group-hover:animate-glow-pulse">
+                      <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-dark" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-roboto font-medium text-neon-cyan uppercase tracking-wider">
+                      <h4 className="text-xs md:text-sm font-roboto font-medium text-neon-cyan uppercase tracking-wider">
                         {info.title}
                       </h4>
-                      <p className="text-white font-roboto text-lg group-hover:text-neon-cyan transition-colors duration-300">
+                      <p className="text-white font-roboto text-base md:text-lg group-hover:text-neon-cyan transition-colors duration-300">
                         {info.value}
                       </p>
                     </div>
@@ -203,15 +203,15 @@ const Contact = () => {
 
             {/* Additional CTA */}
             <div className="bg-gradient-to-r from-neon-purple/20 to-neon-magenta/20 rounded-xl p-6 border border-neon-purple/30">
-              <h4 className="text-xl font-montserrat font-bold text-white mb-3">
+              <h4 className="text-lg md:text-xl font-montserrat font-bold text-white mb-3">
                 Ready for a Free Consultation?
               </h4>
-              <p className="text-gray-300 font-roboto mb-4">
+              <p className="text-sm md:text-base text-gray-300 font-roboto mb-4">
                 Schedule a 30-minute discovery call to discuss your project goals and how we can help.
               </p>
               <Link to="/contact">
                 <Button className="bg-gradient-to-r from-neon-purple to-neon-magenta text-white font-roboto font-semibold">
-                  Schedule Call
+                  Schedule Free Consultation
                 </Button>
               </Link>
             </div>

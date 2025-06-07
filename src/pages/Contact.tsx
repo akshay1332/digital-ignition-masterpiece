@@ -1,65 +1,106 @@
-
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Calendar } from 'lucide-react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BookingSystem from '@/components/BookingSystem';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Mail, Phone, MapPin, Send, Calendar, MessageCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [consultationForm, setConsultationForm] = useState({
     name: '',
     email: '',
     phone: '',
     service: '',
-    budget: '',
+    projectDetails: ''
+  });
+  const [inquiryForm, setInquiryForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
     message: ''
   });
+  const [isSubmittingConsultation, setIsSubmittingConsultation] = useState(false);
+  const [isSubmittingInquiry, setIsSubmittingInquiry] = useState(false);
+  const { toast } = useToast();
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const handleConsultationChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setConsultationForm({
+      ...consultationForm,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleInquiryChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setInquiryForm({
+      ...inquiryForm,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleConsultationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmittingConsultation(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Consultation Scheduled!",
+        description: "We'll contact you shortly to confirm the details.",
+      });
+      setConsultationForm({ name: '', email: '', phone: '', service: '', projectDetails: '' });
+      setIsSubmittingConsultation(false);
+    }, 1000);
+  };
+
+  const handleInquirySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmittingInquiry(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setInquiryForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      setIsSubmittingInquiry(false);
+    }, 1000);
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email Us',
-      details: 'akshayrajput2616@gmail.com',
-      description: 'Send us an email anytime'
+      title: "Email",
+      value: "akshayrajput2616@gmail.com",
+      link: "mailto:akshayrajput2616@gmail.com"
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      details: '+91 96538 14628',
-      description: 'Mon-Fri from 9am to 6pm'
+      title: "Phone",
+      value: "+91 96538 14628",
+      link: "tel:+919653814628"
     },
     {
       icon: MapPin,
-      title: 'Visit Us',
-      details: 'India',
-      description: 'Schedule an appointment'
+      title: "Location",
+      value: "India",
+      link: "#"
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Contact Us | Schedule Free Consultation | devXplosion</title>
-        <meta name="description" content="Contact devXplosion for professional web development, design, and UX services. Book your free consultation today!" />
-        <meta name="keywords" content="contact web developer, free consultation, web design consultation, get quote, web development services contact" />
-        <meta property="og:title" content="Contact Us | Schedule Free Consultation | devXplosion" />
-        <meta property="og:description" content="Contact devXplosion for professional web development and design services. Free consultation available!" />
+        <title>Contact Us | Web Development Services | devXplosion</title>
+        <meta name="description" content="Contact devXplosion for web development, design, and UX services. Schedule a free consultation to discuss your project." />
+        <meta name="keywords" content="contact web developers, hire web designers, UX consultation, web development services" />
+        <meta property="og:title" content="Contact Us | Web Development Services | devXplosion" />
+        <meta property="og:description" content="Contact devXplosion for web development, design, and UX services." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://devxplosion.com/contact" />
       </Helmet>
@@ -69,249 +110,274 @@ const Contact = () => {
         
         <div className="pt-16">
           {/* Hero Section */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark to-eco-green/10"></div>
             
             <div className="max-w-7xl mx-auto relative z-10 text-center">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-montserrat font-bold text-white mb-6 animate-fade-in-up">
-                Let's <span className="text-eco-green">Connect</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-white mb-4 md:mb-6">
+                Get in <span className="text-eco-green">Touch</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-gray-300 font-roboto max-w-4xl mx-auto mb-12 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                Ready to transform your digital presence? Book your <span className="text-eco-green font-semibold">FREE consultation</span> or get in touch with our team.
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-roboto max-w-4xl mx-auto mb-8 md:mb-12">
+                Ready to transform your digital presence? Let's discuss your project and create something extraordinary together.
               </p>
             </div>
           </section>
 
-          {/* Contact Info Cards */}
-          <section className="py-12 px-4 sm:px-6 lg:px-8">
+          {/* Contact Forms Section */}
+          <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="grid md:grid-cols-3 gap-8 mb-16">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <Card 
-                      key={index}
-                      className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 hover:border-eco-green/60 transition-all duration-300 text-center group shadow-xl shadow-eco-green/10"
+              <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+                
+                {/* Schedule Free Consultation Form */}
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-md rounded-2xl border border-eco-green/30 p-6 md:p-8">
+                  <div className="text-center mb-6 md:mb-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-eco-green to-eco-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Calendar className="w-8 h-8 text-dark" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-4">
+                      Schedule Free Consultation
+                    </h3>
+                    <p className="text-sm md:text-base text-gray-300 font-roboto">
+                      Book a 30-minute discovery call to discuss your project goals.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleConsultationSubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Full Name *
+                        </label>
+                        <Input
+                          name="name"
+                          type="text"
+                          required
+                          value={consultationForm.name}
+                          onChange={handleConsultationChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Email *
+                        </label>
+                        <Input
+                          name="email"
+                          type="email"
+                          required
+                          value={consultationForm.email}
+                          onChange={handleConsultationChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Phone Number
+                        </label>
+                        <Input
+                          name="phone"
+                          type="tel"
+                          value={consultationForm.phone}
+                          onChange={handleConsultationChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="Your phone number"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Service Interest *
+                        </label>
+                        <select
+                          name="service"
+                          required
+                          value={consultationForm.service}
+                          onChange={handleConsultationChange}
+                          className="w-full h-12 bg-gray-900/90 border border-gray-600 text-white focus:border-eco-green focus:ring-eco-green/20 rounded-md px-3 py-2"
+                        >
+                          <option value="">Select a service</option>
+                          <option value="web-design">Web Design</option>
+                          <option value="web-development">Web Development</option>
+                          <option value="website-redesign">Website Redesign</option>
+                          <option value="ui-ux-design">UI/UX Design</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                        Project Details
+                      </label>
+                      <textarea
+                        name="projectDetails"
+                        value={consultationForm.projectDetails}
+                        onChange={handleConsultationChange}
+                        rows={4}
+                        className="w-full bg-gray-900/90 border border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 rounded-md px-3 py-2 resize-none"
+                        placeholder="Brief description of your project..."
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmittingConsultation}
+                      className="w-full bg-gradient-to-r from-eco-green to-eco-dark text-dark font-roboto font-semibold py-4 hover:shadow-lg hover:shadow-eco-green/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
                     >
-                      <CardHeader>
-                        <div className="w-16 h-16 bg-gradient-to-br from-eco-green/20 to-eco-green/10 border border-eco-green/30 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:animate-glow-pulse">
-                          <Icon className="w-8 h-8 text-eco-green" />
-                        </div>
-                        <CardTitle className="text-xl font-montserrat font-bold text-white">
-                          {info.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-lg font-roboto text-eco-green mb-2">
-                          {info.details}
-                        </p>
-                        <CardDescription className="text-gray-300 font-roboto">
-                          {info.description}
-                        </CardDescription>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
+                      {isSubmittingConsultation ? 'Scheduling...' : 'Schedule Free Consultation'}
+                    </Button>
+                  </form>
+                </div>
+
+                {/* General Inquiry Form */}
+                <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-md rounded-2xl border border-eco-green/30 p-6 md:p-8">
+                  <div className="text-center mb-6 md:mb-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-eco-green to-eco-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                      <MessageCircle className="w-8 h-8 text-dark" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-4">
+                      General Inquiry
+                    </h3>
+                    <p className="text-sm md:text-base text-gray-300 font-roboto">
+                      Have questions? Send us a message and we'll get back to you.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleInquirySubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Full Name *
+                        </label>
+                        <Input
+                          name="name"
+                          type="text"
+                          required
+                          value={inquiryForm.name}
+                          onChange={handleInquiryChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Email *
+                        </label>
+                        <Input
+                          name="email"
+                          type="email"
+                          required
+                          value={inquiryForm.email}
+                          onChange={handleInquiryChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Phone Number
+                        </label>
+                        <Input
+                          name="phone"
+                          type="tel"
+                          value={inquiryForm.phone}
+                          onChange={handleInquiryChange}
+                          className="bg-gray-900/90 border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 h-12"
+                          placeholder="Your phone number"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                          Subject *
+                        </label>
+                        <select
+                          name="subject"
+                          required
+                          value={inquiryForm.subject}
+                          onChange={handleInquiryChange}
+                          className="w-full h-12 bg-gray-900/90 border border-gray-600 text-white focus:border-eco-green focus:ring-eco-green/20 rounded-md px-3 py-2"
+                        >
+                          <option value="">Select a subject</option>
+                          <option value="general">General Question</option>
+                          <option value="pricing">Pricing Information</option>
+                          <option value="support">Technical Support</option>
+                          <option value="partnership">Partnership Opportunity</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-roboto font-medium text-gray-300 mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        name="message"
+                        required
+                        value={inquiryForm.message}
+                        onChange={handleInquiryChange}
+                        rows={5}
+                        className="w-full bg-gray-900/90 border border-gray-600 text-white placeholder-gray-400 focus:border-eco-green focus:ring-eco-green/20 rounded-md px-3 py-2 resize-none"
+                        placeholder="Your message..."
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmittingInquiry}
+                      className="w-full bg-gradient-to-r from-eco-green to-eco-dark text-dark font-roboto font-semibold py-4 hover:shadow-lg hover:shadow-eco-green/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50"
+                    >
+                      {isSubmittingInquiry ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Main Contact Section with Tabs */}
-          <section className="py-20 px-4 sm:px-6 lg:px-8">
+          {/* Contact Information Section */}
+          <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-dark">
             <div className="max-w-7xl mx-auto">
-              <Tabs defaultValue="booking" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8 bg-gradient-to-r from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-xl shadow-eco-green/10">
-                  <TabsTrigger 
-                    value="booking" 
-                    className="text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-eco-green data-[state=active]:to-eco-medium data-[state=active]:text-dark font-roboto font-semibold transition-all duration-300"
-                  >
-                    Schedule Free Consultation
-                  </TabsTrigger>
-                  <TabsTrigger 
-                    value="contact" 
-                    className="text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-eco-green data-[state=active]:to-eco-medium data-[state=active]:text-dark font-roboto font-semibold transition-all duration-300"
-                  >
-                    General Inquiry
-                  </TabsTrigger>
-                </TabsList>
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-white mb-4 md:mb-6">
+                  Contact <span className="text-eco-green">Information</span>
+                </h2>
+                <p className="text-lg md:text-xl font-roboto text-gray-300 max-w-3xl mx-auto">
+                  Reach out to us through the following channels. We are eager to assist you with your digital needs.
+                </p>
+              </div>
 
-                {/* Booking System Tab */}
-                <TabsContent value="booking">
-                  <div className="text-center mb-8">
-                    <h2 className="text-3xl font-montserrat font-bold text-white mb-4">
-                      Book Your <span className="text-eco-green">Free Consultation</span>
-                    </h2>
-                    <p className="text-lg text-gray-300 font-roboto max-w-2xl mx-auto">
-                      Get expert advice, project assessment, and strategic recommendations - completely free!
-                    </p>
-                  </div>
-                  <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 rounded-2xl p-8 shadow-2xl shadow-eco-green/10">
-                    <BookingSystem />
-                  </div>
-                </TabsContent>
-
-                {/* Contact Form Tab */}
-                <TabsContent value="contact">
-                  <div className="grid lg:grid-cols-2 gap-16">
-                    {/* Contact Form */}
-                    <div>
-                      <h2 className="text-3xl font-montserrat font-bold text-white mb-8">
-                        General <span className="text-eco-green">Inquiry</span>
-                      </h2>
-                      
-                      <Card className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl shadow-eco-green/10">
-                        <CardContent className="p-8">
-                          <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid md:grid-cols-2 gap-4">
-                              <div>
-                                <label className="block text-white font-roboto font-semibold mb-3">Name *</label>
-                                <Input
-                                  value={formData.name}
-                                  onChange={(e) => handleInputChange('name', e.target.value)}
-                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
-                                  placeholder="Your full name"
-                                  required
-                                />
-                              </div>
-                              <div>
-                                <label className="block text-white font-roboto font-semibold mb-3">Email *</label>
-                                <Input
-                                  type="email"
-                                  value={formData.email}
-                                  onChange={(e) => handleInputChange('email', e.target.value)}
-                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
-                                  placeholder="your@email.com"
-                                  required
-                                />
-                              </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 gap-4">
-                              <div>
-                                <label className="block text-white font-roboto font-semibold mb-3">Phone</label>
-                                <Input
-                                  value={formData.phone}
-                                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                                  className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg"
-                                  placeholder="+91 96538 14628"
-                                />
-                              </div>
-                              <div>
-                                <label className="block text-white font-roboto font-semibold mb-3">Service Needed *</label>
-                                <Select onValueChange={(value) => handleInputChange('service', value)} required>
-                                  <SelectTrigger className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg">
-                                    <SelectValue placeholder="Select a service" className="text-gray-400" />
-                                  </SelectTrigger>
-                                  <SelectContent className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
-                                    <SelectItem value="redesign" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Website Redesign</SelectItem>
-                                    <SelectItem value="design" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Design</SelectItem>
-                                    <SelectItem value="development" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Web Development</SelectItem>
-                                    <SelectItem value="ux" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">UI/UX Design</SelectItem>
-                                    <SelectItem value="consultation" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Consultation</SelectItem>
-                                  </SelectContent>
-                                </Select>
-                              </div>
-                            </div>
-
-                            <div>
-                              <label className="block text-white font-roboto font-semibold mb-3">Budget Range</label>
-                              <Select onValueChange={(value) => handleInputChange('budget', value)}>
-                                <SelectTrigger className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 transition-all duration-300 h-12 shadow-lg">
-                                  <SelectValue placeholder="Select budget range" className="text-gray-400" />
-                                </SelectTrigger>
-                                <SelectContent className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md border-2 border-eco-green/30 shadow-2xl">
-                                  <SelectItem value="free" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Free Consultation</SelectItem>
-                                  <SelectItem value="under-10k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">Under ₹10,000</SelectItem>
-                                  <SelectItem value="10k-25k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹10,000 - ₹25,000</SelectItem>
-                                  <SelectItem value="25k-50k" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹25,000 - ₹50,000</SelectItem>
-                                  <SelectItem value="50k-plus" className="text-white hover:bg-eco-green/20 focus:bg-eco-green/20 cursor-pointer">₹50,000+</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </div>
-
-                            <div>
-                              <label className="block text-white font-roboto font-semibold mb-3">Project Description *</label>
-                              <Textarea
-                                value={formData.message}
-                                onChange={(e) => handleInputChange('message', e.target.value)}
-                                className="bg-gradient-to-r from-gray-800/90 to-gray-700/90 backdrop-blur-sm border-2 border-eco-green/30 text-white placeholder-gray-400 focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 min-h-[120px] transition-all duration-300 resize-none shadow-lg"
-                                placeholder="Tell us about your project, goals, and timeline..."
-                                required
-                              />
-                            </div>
-
-                            <Button 
-                              type="submit"
-                              className="w-full bg-gradient-to-r from-eco-green to-eco-medium text-dark font-roboto font-semibold py-4 text-lg hover:shadow-xl hover:shadow-eco-green/30 transition-all duration-300 transform hover:scale-105"
-                            >
-                              Send Message
-                              <Send className="ml-2 h-5 w-5" />
-                            </Button>
-                          </form>
-                        </CardContent>
-                      </Card>
-                    </div>
-
-                    {/* Additional Info */}
-                    <div className="space-y-8">
-                      <div>
-                        <h3 className="text-2xl font-montserrat font-bold text-white mb-6">
-                          Why Choose <span className="text-eco-green">devXplosion</span>?
-                        </h3>
-                        <div className="space-y-4">
-                          {[
-                            'Free consultation and project assessment',
-                            'Transparent pricing starting at ₹9,999',
-                            'Dedicated project manager for seamless communication',
-                            'Agile development process with regular updates',
-                            'Post-launch support and maintenance',
-                            '100% satisfaction guarantee'
-                          ].map((benefit, index) => (
-                            <div key={index} className="flex items-center">
-                              <div className="w-2 h-2 bg-eco-green rounded-full mr-3 animate-glow-pulse"></div>
-                              <span className="text-gray-300 font-roboto">{benefit}</span>
-                            </div>
-                          ))}
-                        </div>
+              <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
+                {contactInfo.map((info, index) => {
+                  const IconComponent = info.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={info.link}
+                      className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 hover:border-eco-green/50 transition-all duration-300 group"
+                    >
+                      <div className="w-16 h-16 bg-gradient-to-br from-eco-green to-eco-dark rounded-full flex items-center justify-center mb-4 group-hover:animate-glow-pulse">
+                        <IconComponent className="w-8 h-8 text-dark" />
                       </div>
-
-                      <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-md border-2 border-eco-magenta/20 shadow-xl shadow-eco-magenta/10">
-                        <CardHeader>
-                          <CardTitle className="text-xl font-montserrat font-bold text-white flex items-center">
-                            <Calendar className="w-5 h-5 mr-2 text-eco-magenta" />
-                            Schedule a Free Consultation
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-300 font-roboto mb-4">
-                            Book a 30-minute consultation to discuss your project requirements and get expert recommendations.
-                          </p>
-                          <Button 
-                            variant="outline"
-                            className="w-full border-2 border-eco-magenta text-eco-magenta hover:bg-eco-magenta hover:text-dark font-roboto font-semibold transition-all duration-300"
-                          >
-                            Book Consultation
-                          </Button>
-                        </CardContent>
-                      </Card>
-
-                      <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-md border-2 border-eco-purple/20 shadow-xl shadow-eco-purple/10">
-                        <CardHeader>
-                          <CardTitle className="text-xl font-montserrat font-bold text-white">
-                            Quick Response Time
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-300 font-roboto">
-                            We typically respond to all inquiries within 2-4 hours during business hours. 
-                            For urgent projects, call us directly for immediate assistance.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
+                      <h4 className="text-sm font-roboto font-medium text-eco-green uppercase tracking-wider mb-2">
+                        {info.title}
+                      </h4>
+                      <p className="text-white font-roboto text-lg group-hover:text-eco-green transition-colors duration-300 text-center">
+                        {info.value}
+                      </p>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </section>
         </div>
