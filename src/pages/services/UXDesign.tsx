@@ -87,8 +87,8 @@ const UXDesign = () => {
       }
     ],
     cta: {
-      primary: 'Enhance Your UX',
-      secondary: 'Schedule UX Consultation'
+      headline: 'Ready to Enhance User Experience?',
+      description: 'Let\'s create intuitive interfaces that users love and convert effectively.'
     },
     color: 'neon-cyan'
   };
@@ -108,7 +108,7 @@ const UXDesign = () => {
       <div className="min-h-screen bg-dark">
         <Navigation />
         <div className="pt-16">
-          <ServiceDetail data={serviceData} />
+          <ServiceDetail {...serviceData} />
         </div>
         <Footer />
       </div>

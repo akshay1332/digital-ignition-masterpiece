@@ -87,8 +87,8 @@ const Design = () => {
       }
     ],
     cta: {
-      primary: 'Start Design Project',
-      secondary: 'View Design Portfolio'
+      headline: 'Ready to Transform Your Brand?',
+      description: 'Let\'s create a stunning digital presence that converts visitors into customers.'
     },
     color: 'neon-magenta'
   };
@@ -108,7 +108,7 @@ const Design = () => {
       <div className="min-h-screen bg-dark">
         <Navigation />
         <div className="pt-16">
-          <ServiceDetail data={serviceData} />
+          <ServiceDetail {...serviceData} />
         </div>
         <Footer />
       </div>

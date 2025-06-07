@@ -83,8 +83,8 @@ const Redesign = () => {
       }
     ],
     cta: {
-      primary: 'Request Redesign Quote',
-      secondary: 'View Redesign Portfolio'
+      headline: 'Ready for a Digital Makeover?',
+      description: 'Transform your website into a conversion-optimized powerhouse that drives real results.'
     },
     color: 'neon-cyan'
   };
@@ -93,7 +93,7 @@ const Redesign = () => {
     <div className="min-h-screen bg-dark">
       <Navigation />
       <div className="pt-16">
-        <ServiceDetail data={serviceData} />
+        <ServiceDetail {...serviceData} />
       </div>
       <Footer />
     </div>

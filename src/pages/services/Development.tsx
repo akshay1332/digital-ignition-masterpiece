@@ -87,8 +87,8 @@ const Development = () => {
       }
     ],
     cta: {
-      primary: 'Get Development Quote',
-      secondary: 'View Our Projects'
+      headline: 'Ready to Build Something Amazing?',
+      description: 'Let\'s transform your vision into a powerful web application that drives your business forward.'
     },
     color: 'neon-purple'
   };
@@ -108,7 +108,7 @@ const Development = () => {
       <div className="min-h-screen bg-dark">
         <Navigation />
         <div className="pt-16">
-          <ServiceDetail data={serviceData} />
+          <ServiceDetail {...serviceData} />
         </div>
         <Footer />
       </div>
