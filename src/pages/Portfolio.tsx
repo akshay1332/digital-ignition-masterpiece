@@ -1,7 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Portfolio from '@/components/Portfolio';
+import StickyPortfolio from '@/components/StickyPortfolio';
 import { Helmet } from 'react-helmet-async';
 
 const PortfolioPage = () => {
@@ -36,7 +36,7 @@ const PortfolioPage = () => {
         </section>
 
         <div className="pt-0">
-          <Portfolio />
+          <StickyPortfolio />
         </div>
         <Footer />
       </div>

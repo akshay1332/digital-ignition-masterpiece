@@ -45,6 +45,42 @@ const StickyPortfolio = () => {
       technologies: ["React", "SEO Optimization", "Animations", "Multilingual"],
       results: ["+80% Organic Traffic", "+55% Mobile Engagement", "+35% Lead Conversion"],
       liveUrl: "https://chronical-lac.vercel.app"
+    },
+    {
+      title: "Portfolio Website – Akshay Pratap Singh",
+      category: "Personal Branding",
+      description: "High-performance personal portfolio with modern design, optimized for recruiters and clients. Achieved 100% Core Web Vitals and generated 4 client leads in first month.",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+      technologies: ["React/Next.js", "Performance Optimization", "SEO", "Responsive Design"],
+      results: ["100% Core Web Vitals", "+500 Profile Clicks", "4 Client Leads"],
+      liveUrl: "https://akshayys.vercel.app"
+    },
+    {
+      title: "CustomPrint – Personalized Product Store",
+      category: "E-commerce",
+      description: "User-friendly e-commerce platform for personalized products with live previews, dynamic image configurator, and optimized 3-click purchase flow. Reduced cart abandonment by 60%.",
+      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop",
+      technologies: ["JavaScript", "Product Configurator", "Payment Gateway", "Mobile-First"],
+      results: ["+45% Sales Conversion", "+70% Mobile Engagement", "2.8s Page Load"],
+      liveUrl: "https://customprint.in"
+    },
+    {
+      title: "AutoaMake – Auto Parts Marketplace",
+      category: "E-commerce Platform",
+      description: "Scalable platform for thousands of vehicle accessories with advanced filtering, review system, and SEO optimization. Achieved 120% increase in search traffic.",
+      image: "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=800&h=600&fit=crop",
+      technologies: ["Multi-Category UI", "AJAX Filtering", "Review System", "CDN"],
+      results: ["+120% Search Traffic", "+40% Order Volume", "50% Less Bounce Rate"],
+      liveUrl: "https://autoamake.com"
+    },
+    {
+      title: "BioclinPharam – Medical Lab Website",
+      category: "Healthcare Platform",
+      description: "Responsive medical website with appointment booking, test listings, and downloadable reports. Integrated email automation and SEO for medical services.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
+      technologies: ["CMS", "Appointment System", "Email Automation", "Medical SEO"],
+      results: ["+85% Web Appointments", "+60% Organic Traffic", "3x Mobile Usage"],
+      liveUrl: "https://bioclinpharam.in"
     }
   ];
 
@@ -79,7 +115,7 @@ const StickyPortfolio = () => {
   return (
     <section 
       ref={sectionRef}
-      className="min-h-[400vh] relative bg-dark"
+      className="min-h-[800vh] relative bg-dark"
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

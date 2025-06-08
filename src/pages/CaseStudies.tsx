@@ -1,9 +1,8 @@
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock, TrendingUp, Users, Globe, Zap, Target } from 'lucide-react';
+import { ArrowRight, Clock, TrendingUp, Users, Globe, Zap, Target, ShoppingCart, Search, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -102,6 +101,63 @@ const CaseStudies = () => {
         { label: 'Core Web Vitals Passed', value: '100%', icon: Zap },
         { label: 'Profile Clicks in First Month', value: '+500', icon: Users },
         { label: 'Client Leads Converted', value: '4', icon: Target }
+      ]
+    },
+    {
+      id: 6,
+      title: 'CustomPrint – Personalized Product Store',
+      client: 'CustomPrint.in',
+      industry: 'Personalized Gifting',
+      category: 'E-commerce | Customization Tool | Mobile-First Design',
+      challenge: 'The brand needed a user-friendly e-commerce platform allowing customers to personalize products (e.g., t-shirts, mugs) with live previews, while facing high bounce rates and long checkout processes on their previous site.',
+      solution: 'Built a custom product configurator using JavaScript with dynamic image previews. Integrated a fast, clean checkout system, added COD/payment gateway, and designed a responsive UI with product-based navigation.',
+      result: 'Seamless user experience with real-time product previews, 60% decrease in cart abandonment, mobile-first experience optimized for 3-click purchase',
+      duration: '4 weeks',
+      liveUrl: 'https://customprint.in',
+      image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['E-commerce', 'Customization Tool', 'Mobile-First Design'],
+      metrics: [
+        { label: 'Sales Conversion', value: '+45%', icon: ShoppingCart },
+        { label: 'Mobile Engagement', value: '+70%', icon: Users },
+        { label: 'Avg Page Load Time', value: '2.8s', icon: Zap }
+      ]
+    },
+    {
+      id: 7,
+      title: 'AutoaMake – Automobile Custom Parts & Accessories',
+      client: 'AutoaMake.com',
+      industry: 'Auto Parts Marketplace',
+      category: 'E-commerce Website | UI/UX Design | Multi-Category Structure',
+      challenge: 'AutoaMake wanted a scalable platform for listing thousands of vehicle accessories and tools, with advanced category filtering, responsive layout, and SEO-focused architecture to compete with industry giants.',
+      solution: 'Developed an optimized multi-category product listing interface with filters by car model, type, and brand. Included user review modules, responsive sliders, and a blazing fast load time with CDN and image compression.',
+      result: 'Increased trust & retention with review-based buying, 2x faster search with AJAX-based filtering, higher domain authority via blog integration',
+      duration: '5 weeks',
+      liveUrl: 'https://autoamake.com',
+      image: 'https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['E-commerce', 'Auto Parts', 'Multi-Category'],
+      metrics: [
+        { label: 'Search Traffic', value: '+120%', icon: Search },
+        { label: 'Order Volume Month-over-Month', value: '+40%', icon: TrendingUp },
+        { label: 'Site Bounce Rate Decrease', value: '50%', icon: Target }
+      ]
+    },
+    {
+      id: 8,
+      title: 'BioclinPharam – Medical Lab & Diagnostic Website',
+      client: 'BioclinPharam Diagnostics',
+      industry: 'Path Lab Services',
+      category: 'Healthcare Website | CMS | Appointment System',
+      challenge: 'Needed a medical website for lab service offerings with dynamic test listings, appointment booking, and professional trust-building design. The older site lacked clarity, mobile support, and SEO readiness.',
+      solution: 'Developed a fully responsive, CMS-backed website with categorized test details, downloadable reports section, and online appointment forms integrated with email automation. Included meta SEO for medical services.',
+      result: 'Improved patient experience with 1-click appointment booking, faster access to test info & downloadable PDFs, better search engine ranking in regional diagnostics',
+      duration: '3 weeks',
+      liveUrl: 'https://bioclinpharam.in',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['Healthcare', 'Medical Lab', 'Appointment System'],
+      metrics: [
+        { label: 'Patient Appointments via Web', value: '+85%', icon: Activity },
+        { label: 'Organic Google Traffic', value: '+60%', icon: Globe },
+        { label: 'Mobile Usage Growth in First Month', value: '3x', icon: Users }
       ]
     }
   ];
