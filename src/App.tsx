@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -17,17 +18,6 @@ import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-
-// Admin Routes
-import Dashboard from "./pages/admin/Dashboard";
-import Homepage from "./pages/admin/Homepage";
-import BlogAdmin from "./pages/admin/BlogAdmin";
-import CaseStudiesAdmin from "./pages/admin/CaseStudiesAdmin";
-import PortfolioAdmin from "./pages/admin/PortfolioAdmin";
-import ServicesAdmin from "./pages/admin/ServicesAdmin";
-import WebDesignAdmin from "./pages/admin/WebDesignAdmin";
-import AboutAdmin from "./pages/admin/AboutAdmin";
-import ContactAdmin from "./pages/admin/ContactAdmin";
 
 const queryClient = new QueryClient();
 
@@ -50,20 +40,6 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
-            
-            {/* Admin Routes */}
-            <Route path="/admin" element={<Dashboard />} />
-            <Route path="/admin/homepage" element={<Homepage />} />
-            <Route path="/admin/about" element={<AboutAdmin />} />
-            <Route path="/admin/contact" element={<ContactAdmin />} />
-            <Route path="/admin/services" element={<ServicesAdmin />} />
-            <Route path="/admin/services/design" element={<WebDesignAdmin />} />
-            <Route path="/admin/services/ux-design" element={<WebDesignAdmin />} />
-            <Route path="/admin/services/development" element={<WebDesignAdmin />} />
-            <Route path="/admin/services/redesign" element={<WebDesignAdmin />} />
-            <Route path="/admin/blog" element={<BlogAdmin />} />
-            <Route path="/admin/case-studies" element={<CaseStudiesAdmin />} />
-            <Route path="/admin/portfolio" element={<PortfolioAdmin />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
