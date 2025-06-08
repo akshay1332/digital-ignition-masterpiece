@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock, TrendingUp, Users } from 'lucide-react';
+import { ArrowRight, Clock, TrendingUp, Users, Globe, Zap, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -11,50 +11,97 @@ const CaseStudies = () => {
   const caseStudies = [
     {
       id: 1,
-      title: 'E-commerce Platform Redesign',
-      client: 'TechStore Pro',
-      industry: 'Technology Retail',
-      challenge: 'Low conversion rates and poor mobile experience',
-      result: '150% increase in mobile conversions',
-      duration: '3 months',
+      title: 'E-commerce Custom Website – CrazySnitch',
+      client: 'CrazySnitch.in',
+      industry: 'Fashion & Accessories',
+      category: 'UX Design | Mobile Optimization | Custom Development',
+      challenge: 'The client needed a fast, scalable e-commerce platform with custom product configuration, seamless mobile shopping, and better checkout flow. Previous site had long load times and poor UI for personalized orders.',
+      solution: 'I built a custom e-commerce website using modern responsive frameworks, optimizing checkout UX and integrating secure payment gateways with COD and dynamic shipping modules.',
+      result: 'Enhanced personalization features, fully mobile-optimized experience, 2x faster load time & improved navigation',
+      duration: '5 weeks',
+      liveUrl: 'https://crazysnitch.in',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tags: ['E-commerce', 'UX Design', 'Mobile Optimization'],
       metrics: [
-        { label: 'Conversion Rate', value: '+150%', icon: TrendingUp },
-        { label: 'Page Load Speed', value: '+60%', icon: Clock },
-        { label: 'User Engagement', value: '+85%', icon: Users }
+        { label: 'Personalized Order Engagement', value: '+200%', icon: TrendingUp },
+        { label: 'Mobile Conversion Rate', value: '+50%', icon: Users },
+        { label: 'Google PageSpeed Score', value: '95+', icon: Zap }
       ]
     },
     {
       id: 2,
-      title: 'SaaS Platform Development',
-      client: 'CloudSync Solutions',
-      industry: 'Software',
-      challenge: 'Need for scalable, user-friendly dashboard',
-      result: '200% increase in user retention',
-      duration: '6 months',
+      title: 'AI-Driven Audit Website – Sheetsway',
+      client: 'Sheetsway.com',
+      industry: 'AI Audit SaaS Platform',
+      category: 'Full-Stack Development | SaaS UX | AI Integration',
+      challenge: 'The startup needed a user-friendly frontend that could showcase AI audit tools and handle user authentication, dashboard interaction, and performance logging.',
+      solution: 'Designed a clean, dashboard-style SaaS UI, integrated AI APIs, built login/session system, and deployed with database performance tracking.',
+      result: 'Smooth onboarding for B2B users, 40% faster response time from API endpoints, 0% user drop during audit process',
+      duration: '1.5 months',
+      liveUrl: 'https://sheetsway.com',
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tags: ['SaaS', 'Dashboard', 'Full-Stack Development'],
+      tags: ['SaaS', 'AI Integration', 'Full-Stack Development'],
       metrics: [
-        { label: 'User Retention', value: '+200%', icon: Users },
-        { label: 'Load Time', value: '+75%', icon: Clock },
-        { label: 'Feature Adoption', value: '+120%', icon: TrendingUp }
+        { label: 'User Retention', value: '+70%', icon: Users },
+        { label: 'API Load Speed', value: '+40%', icon: Zap },
+        { label: 'Secure Auth with 2FA', value: '100%', icon: Target }
       ]
     },
     {
       id: 3,
-      title: 'Healthcare Portal Redesign',
-      client: 'MediCare Plus',
-      industry: 'Healthcare',
-      challenge: 'Complex user flows and accessibility issues',
-      result: '90% improvement in user satisfaction',
-      duration: '4 months',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tags: ['Healthcare', 'Accessibility', 'User Experience'],
+      title: 'CampusCashh – Internship & Job Portal',
+      client: 'Self-started MVP',
+      industry: 'Student Career Platform',
+      category: 'Full-Stack Development | Student Career Platform | UI/UX',
+      challenge: 'No dedicated platform existed for university startups and internship listings. Needed a solution for easy posting, filtering, and applying.',
+      solution: 'Built a fully functional MERN stack web app with role-based logins (Student/Recruiter), smart filters, job bookmarking, and resume upload features.',
+      result: '300+ beta users within first 2 weeks, instant job matching with category filter, applied SEO practices to rank job tags',
+      duration: '3 weeks',
+      liveUrl: 'https://campuscashh.vercel.app',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['MERN Stack', 'Job Portal', 'UI/UX'],
       metrics: [
-        { label: 'User Satisfaction', value: '+90%', icon: Users },
-        { label: 'Task Completion', value: '+65%', icon: TrendingUp },
-        { label: 'Accessibility Score', value: '+180%', icon: Clock }
+        { label: 'Engagement from Repeat Users', value: '+150%', icon: TrendingUp },
+        { label: 'New Startups Registered', value: '+40', icon: Users },
+        { label: 'Beta Users in 2 weeks', value: '300+', icon: Target }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Chronical – Dubai Real Estate Business Website',
+      client: 'Dubai-based Real Estate Company',
+      industry: 'Real Estate',
+      category: 'Corporate Website | Real Estate | SEO Optimization',
+      challenge: 'Needed a modern, clean site to showcase properties and attract global clients with fast mobile loading and SEO-friendly structure.',
+      solution: 'Designed a visually stunning landing page with smooth animations, call-to-action buttons, and optimized metadata for Arabic + English keywords.',
+      result: 'Increased lead submissions from mobile, better international traffic via Google, integrated contact and location maps',
+      duration: '10 days',
+      liveUrl: 'https://chronical-lac.vercel.app',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['Real Estate', 'SEO Optimization', 'Corporate Website'],
+      metrics: [
+        { label: 'Organic Traffic', value: '+80%', icon: Globe },
+        { label: 'Mobile Engagement', value: '+55%', icon: Users },
+        { label: 'Lead Conversion', value: '+35%', icon: TrendingUp }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Portfolio Website – Akshay Pratap Singh',
+      client: 'Personal Project',
+      industry: 'Personal Branding',
+      category: 'Personal Branding | Responsive Design | Smooth UX',
+      challenge: 'Needed a high-performance, personal site that reflects my full-stack skills, project experience, and allows recruiters to browse easily on any device.',
+      solution: 'Created a minimal yet bold UI using modern tech (React/Next.js), with project cards, contact form, and optimized images and Lighthouse SEO.',
+      result: '90+ PageSpeed on mobile, featured in 3 portfolio inspiration groups, used as example for personal branding in 2 university webinars',
+      duration: '4 days',
+      liveUrl: 'https://akshayys.vercel.app',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      tags: ['Personal Branding', 'React/Next.js', 'SEO'],
+      metrics: [
+        { label: 'Core Web Vitals Passed', value: '100%', icon: Zap },
+        { label: 'Profile Clicks in First Month', value: '+500', icon: Users },
+        { label: 'Client Leads Converted', value: '4', icon: Target }
       ]
     }
   ];
@@ -104,6 +151,11 @@ const CaseStudies = () => {
                         className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/20 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-neon-purple text-dark px-3 py-1 rounded-full text-sm font-roboto font-medium">
+                          {study.category.split(' | ')[0]}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Content Section */}
@@ -130,12 +182,17 @@ const CaseStudies = () => {
                         <div className="grid md:grid-cols-2 gap-4">
                           <div>
                             <h4 className="text-white font-montserrat font-semibold mb-2">Challenge:</h4>
-                            <p className="text-gray-300 font-roboto">{study.challenge}</p>
+                            <p className="text-gray-300 font-roboto text-sm">{study.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="text-white font-montserrat font-semibold mb-2">Result:</h4>
-                            <p className="text-neon-purple font-roboto font-medium">{study.result}</p>
+                            <h4 className="text-white font-montserrat font-semibold mb-2">Solution:</h4>
+                            <p className="text-gray-300 font-roboto text-sm">{study.solution}</p>
                           </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-white font-montserrat font-semibold mb-2">Result:</h4>
+                          <p className="text-neon-purple font-roboto font-medium">{study.result}</p>
                         </div>
 
                         {/* Metrics */}
@@ -159,10 +216,20 @@ const CaseStudies = () => {
                           <div className="text-sm text-gray-400 font-roboto">
                             Duration: {study.duration}
                           </div>
-                          <Button className="bg-gradient-to-r from-neon-purple to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-neon-purple/25 transition-all duration-300">
-                            View Full Case Study
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                          </Button>
+                          <div className="flex gap-3">
+                            <a href={study.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <Button 
+                                variant="outline" 
+                                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-dark transition-all duration-300"
+                              >
+                                View Live
+                              </Button>
+                            </a>
+                            <Button className="bg-gradient-to-r from-neon-purple to-neon-magenta text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-neon-purple/25 transition-all duration-300">
+                              View Full Case Study
+                              <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                          </div>
                         </div>
                       </CardContent>
                     </div>

@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ExternalLink } from 'lucide-react';
@@ -8,44 +9,54 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "TechFlow Solutions",
-      category: "Web Development",
-      description: "Complete redesign and development of a SaaS platform with 300% increase in user engagement.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-      technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-      results: ["300% User Engagement", "50% Faster Load Times", "98% Uptime"]
+      title: "E-commerce Custom Website – CrazySnitch",
+      category: "E-commerce Development",
+      description: "Complete custom e-commerce platform with personalization features, mobile optimization, and enhanced checkout UX. Achieved 2x faster load times and 200% increase in personalized order engagement.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      technologies: ["React", "Node.js", "Payment Gateway", "Mobile Optimization"],
+      results: ["+200% Personalized Orders", "+50% Mobile Conversion", "95+ PageSpeed Score"],
+      liveUrl: "https://crazysnitch.in",
+      duration: "5 weeks"
     },
     {
-      title: "Creative Studio",
-      category: "UI/UX Design",
-      description: "Modern portfolio website with interactive animations and seamless user experience.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-      technologies: ["Figma", "React", "Framer Motion", "Tailwind"],
-      results: ["40% More Inquiries", "Reduced Bounce Rate", "Award Winning Design"]
+      title: "AI-Driven Audit Website – Sheetsway",
+      category: "SaaS Development",
+      description: "Modern SaaS platform with AI integration, dashboard UI, and secure authentication system. Built for seamless B2B user experience with zero drop-off during audit processes.",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+      technologies: ["React", "AI APIs", "Dashboard UI", "Authentication"],
+      results: ["+70% User Retention", "+40% API Speed", "Secure 2FA Auth"],
+      liveUrl: "https://sheetsway.com",
+      duration: "1.5 months"
     },
     {
-      title: "E-Commerce Platform",
-      category: "Website Redesign",
-      description: "Full redesign of online store resulting in significant conversion rate improvements.",
-      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&h=600&fit=crop",
-      technologies: ["Shopify", "Vue.js", "Stripe", "Analytics"],
-      results: ["150% Sales Increase", "Better UX Score", "Mobile Optimized"]
+      title: "CampusCashh – Job Portal",
+      category: "Full-Stack Platform",
+      description: "MERN stack job portal for university students with role-based authentication, smart filtering, and resume upload functionality. Gained 300+ beta users in 2 weeks.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      technologies: ["MERN Stack", "Role-based Auth", "Smart Filters", "File Upload"],
+      results: ["+150% User Engagement", "300+ Beta Users", "+40 Startups Registered"],
+      liveUrl: "https://campuscashh.vercel.app",
+      duration: "3 weeks"
     },
     {
-      title: "FinTech Dashboard",
-      category: "Web Application",
-      description: "Secure financial dashboard with real-time data visualization and advanced analytics.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-      technologies: ["Angular", "D3.js", "Express", "MongoDB"],
-      results: ["Real-time Analytics", "Bank-grade Security", "Intuitive Interface"]
+      title: "Chronical – Dubai Real Estate",
+      category: "Corporate Website",
+      description: "Modern real estate website with smooth animations, bilingual SEO optimization, and integrated contact forms. Increased organic traffic by 80% and mobile engagement by 55%.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+      technologies: ["React", "SEO Optimization", "Animations", "Multilingual"],
+      results: ["+80% Organic Traffic", "+55% Mobile Engagement", "+35% Lead Conversion"],
+      liveUrl: "https://chronical-lac.vercel.app",
+      duration: "10 days"
     },
     {
-      title: "Healthcare Portal",
-      category: "Digital Platform",
-      description: "Patient management system with telemedicine capabilities and HIPAA compliance.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-      technologies: ["React", "Django", "PostgreSQL", "Docker"],
-      results: ["HIPAA Compliant", "80% Time Savings", "Patient Satisfaction"]
+      title: "Portfolio Website – Akshay Pratap Singh",
+      category: "Personal Branding",
+      description: "High-performance personal portfolio with modern design, optimized for recruiters and clients. Achieved 100% Core Web Vitals and generated 4 client leads in first month.",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+      technologies: ["React/Next.js", "Performance Optimization", "SEO", "Responsive Design"],
+      results: ["100% Core Web Vitals", "+500 Profile Clicks", "4 Client Leads"],
+      liveUrl: "https://akshayys.vercel.app",
+      duration: "4 days"
     }
   ];
 
@@ -76,6 +87,11 @@ const Portfolio = () => {
               <div className="absolute top-4 left-4">
                 <span className="bg-eco-green text-dark px-3 py-1 rounded-full text-sm font-roboto font-medium">
                   {projects[activeProject].category}
+                </span>
+              </div>
+              <div className="absolute bottom-4 right-4">
+                <span className="bg-eco-green text-dark px-4 py-2 rounded-full text-sm font-roboto font-bold">
+                  {projects[activeProject].duration}
                 </span>
               </div>
             </div>
@@ -142,17 +158,19 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/case-studies">
                 <Button className="bg-gradient-to-r from-eco-green to-eco-dark text-dark font-roboto font-semibold hover:shadow-lg hover:shadow-eco-green/25 transition-all duration-300 group">
-                  View Case Study
+                  View Full Case Study
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                className="border-eco-dark text-eco-dark hover:bg-eco-dark hover:text-dark transition-all duration-300 group"
-              >
-                Live Demo
-                <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-              </Button>
+              <a href={projects[activeProject].liveUrl} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="outline" 
+                  className="border-eco-dark text-eco-dark hover:bg-eco-dark hover:text-dark transition-all duration-300 group"
+                >
+                  Live Demo
+                  <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
