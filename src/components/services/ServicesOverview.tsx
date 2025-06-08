@@ -127,20 +127,8 @@ const ServicesOverview = () => {
   }, []);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark to-neon-purple/10"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Hero Section */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-montserrat font-bold text-white mb-6 animate-fade-in-up">
-            Our <span className="text-neon-cyan">Services</span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 font-roboto max-w-4xl mx-auto mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            From concept to launch, we provide comprehensive digital solutions that transform your business and engage your audience.
-          </p>
-        </div>
-
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark">
+      <div className="max-w-7xl mx-auto">
         {/* Services Grid */}
         <div ref={servicesRef} className="grid lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => {

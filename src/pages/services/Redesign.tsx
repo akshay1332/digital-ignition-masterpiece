@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ServiceDetail from '@/components/services/ServiceDetail';
+import { Helmet } from 'react-helmet-async';
 
 const Redesign = () => {
   const serviceData = {
@@ -90,13 +91,25 @@ const Redesign = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark">
-      <Navigation />
-      <div className="pt-16">
-        <ServiceDetail {...serviceData} />
+    <>
+      <Helmet>
+        <title>Website Redesign Services | Revitalize Your Digital Presence | devXplosion</title>
+        <meta name="description" content="Transform your outdated website into a modern, high-performing digital powerhouse. Professional website redesign services from devXplosion." />
+        <meta name="keywords" content="website redesign, web redesign services, website makeover, UI UX redesign, website modernization" />
+        <meta property="og:title" content="Website Redesign Services | Revitalize Your Digital Presence | devXplosion" />
+        <meta property="og:description" content="Transform your outdated website into a modern, high-performing digital powerhouse." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://devxplosion.com/services/redesign" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-dark">
+        <Navigation />
+        <div className="pt-16">
+          <ServiceDetail {...serviceData} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
