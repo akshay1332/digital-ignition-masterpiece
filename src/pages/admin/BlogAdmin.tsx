@@ -173,7 +173,7 @@ const BlogAdmin = () => {
     if (editingBlog) {
       setBlogs(blogs.map(blog => 
         blog.id === editingBlog 
-          ? { ...formData, id: editingBlog, date: blog.date }
+          ? { ...formData, id: editingBlog, date: blog.date, views: blog.views, likes: blog.likes }
           : blog
       ));
     } else {
